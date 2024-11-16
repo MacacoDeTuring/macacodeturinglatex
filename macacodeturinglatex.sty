@@ -1,0 +1,85 @@
+% PACOTE
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{macacodeturinglatex}[2024/11/10 Pacote feito por Wanderson Gomes da Costa]
+
+% PACOTES REQUERIDOS
+\RequirePackage{graphicx}
+\RequirePackage{setspace}
+
+% DADOS
+\newcommand{\logo}[1]{\def\imgLogo{#1}}
+\newcommand{\instituicao}[1]{\def\instituicaoEnsino{\MakeUppercase{#1}}}
+\newcommand{\campus}[1]{\def\campusEnsino{\MakeUppercase{#1}}}
+\newcommand{\curso}[1]{\def\cursoEnsino{\MakeUppercase{#1}}}
+\newcommand{\autor}[1]{\def\autorTrabalho{\MakeUppercase{#1}}}
+\newcommand{\titulo}[1]{\def\tituloTrabalho{\MakeUppercase{#1}}}
+\newcommand{\local}[1]{\def\localTrabalho{\MakeUppercase{#1}}}
+\newcommand{\ano}[1]{\def\anoTrabalho{\MakeUppercase{#1}}}
+\newcommand{\natureza}[1]{\def\naturezaTrabalho{#1}}
+\newcommand{\docente}[1]{\def\docenteTrabalho{#1}}
+
+% Valores padrão
+\logo{}
+\instituicao{Instituição de Ensino}
+\campus{Campus Padrão}
+\curso{Curso Padrão}
+\autor{Autor Padrão}
+\titulo{Título Padrão}
+\local{Cidade Padrão}
+\ano{2024}
+\natureza{Trabalho padrão sem definição.}
+\docente{Professor Padrão}
+
+% CAPA
+\newcommand{\capa}{
+    \begin{titlepage}
+        \begin{center}
+            \includegraphics[width=0.20\textwidth]{\imgLogo}
+
+            \textbf{\instituicaoEnsino}
+
+            \textbf{\textit{CAMPUS} \campusEnsino}
+
+            \textbf{\cursoEnsino}
+            \vspace{3\baselineskip}
+
+            \textbf{\autorTrabalho}
+
+            \vfill
+            \textbf{\tituloTrabalho}
+            \vfill
+
+            \textbf{\localTrabalho}
+
+            \textbf{\anoTrabalho}
+        \end{center}
+    \end{titlepage}
+}
+
+% FOLHA ROSTO
+\newcommand{\folhaRosto}{
+    \begin{titlepage}
+        \begin{center}
+            \textbf{\autorTrabalho}
+
+            \vfill
+            \textbf{ \tituloTrabalho }
+            \vspace{\baselineskip}
+
+            \hspace{7cm}
+            \begin{minipage}{0.5\textwidth}{
+                    \singlespacing
+                    \naturezaTrabalho
+                    \vspace{\baselineskip}
+
+                    Docente responsável: \docenteTrabalho
+                }
+            \end{minipage}
+            \vfill
+
+            \textbf{\localTrabalho}
+
+            \textbf{\anoTrabalho}
+        \end{center}
+    \end{titlepage}
+}
